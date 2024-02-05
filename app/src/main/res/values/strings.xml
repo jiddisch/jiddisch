@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Yiddish</string>
+    <string name="menu">MENU</string>
+    <string name="learnPortalBtn">Learn</string>
+    <string name="practicePortalBtn">Practice</string>
+    <string name="HomeBtn">Home</string>
+    <string name="close_menu">Close menu</string>
+    <string name="alef_menu_bg">Alef menu bg</string>
+    <string name="welcome">Welcome</string>
+    <string name="word">Word</string>
+    <string name="home_path">CHOOSE HOW TO LEARN</string>
+    <string name="learn_path">LEARN PATH</string>
+    <string name="practice_path">PRACTICE PATH</string>
+    <string name="alphabet_path">ALPHABET PATH</string>
+    <string name="bullet_text">%1$d</string>
+    <string name="plural_article_yiddish">די</string>
+    <string name="sing_indicator">(sing.)</string>
+    <string name="pl_indicator">(pl.)</string>
+    <string name="yiddish_transcription">[%1$s]</string>
+    <string name="burger_menu">Burger Menu</string>
+    <string name="speaker_icon_description">Speaker icon to say the word</string>
+</resources>

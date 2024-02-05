@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.jiddisch.app5.ui.HomeFragment"
+        android:label="@string/welcome"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_basePortalFragment"
+            app:destination="@id/base_portal_fragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/base_portal_fragment"
+        android:name="com.jiddisch.app5.ui.BasePortalFragment"
+        android:label="BasePortal"
+        tools:layout="@layout/fragment_base_portal">
+        <action
+            android:id="@+id/action_basePortalFragment_to_alphabetFragment"
+            app:destination="@id/alphabet_fragment" />
+        <action
+            android:id="@+id/action_basePortalFragment_to_word_fragment"
+            app:destination="@id/word_fragment" />
+        <action
+            android:id="@+id/action_basePortalFragment_to_homeFragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/alphabet_fragment"
+        android:name="com.jiddisch.app5.ui.AlphabetFragment"
+        android:label="@string/alphabet_path"
+        tools:layout="@layout/fragment_alphabet">
+        <action
+            android:id="@+id/action_alphabetFragment_to_basePortalFragment"
+            app:destination="@id/base_portal_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/word_fragment"
+        android:name="com.jiddisch.app5.ui.WordFragment"
+        android:label="@string/word"
+        tools:layout="@layout/fragment_word">
+        <action
+            android:id="@+id/action_wordFragment_to_basePortalFragment"
+            app:destination="@id/base_portal_fragment" />
+        <action
+            android:id="@+id/action_wordFragment_to_wordFragment"
+            app:destination="@id/word_fragment" />
+        <action
+            android:id="@+id/action_wordFragment_to_homeFragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="menu_button_padding">24dp</dimen>
+
+    <dimen name="toolbar_breadcrumb_margin_end">16dp</dimen>
+    <dimen name="toolbar_breadcrumb_padding">8dp</dimen>
+    <dimen name="toolbar_breadcrumb_text_size">16sp</dimen>
+
+    <dimen name="main_menu_item_padding">20dp</dimen>
+    <dimen name="main_menu_item_text_size">30sp</dimen>
+</resources>

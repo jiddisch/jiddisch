@@ -1,0 +1,54 @@
+@startuml
+
+entity MainCategory {
+    id: int <<PK, AI>>
+    name: string
+    created_at: datetime
+    updated_at: datetime
+}
+
+entity Category {
+    id: int <<PK, AI>>
+    main_category_id: int <<FK, PK>>
+    name: string
+    created_at: datetime
+    updated_at: datetime
+}
+
+entity Alphabet {
+    id: int <<PK, AI>>
+    yiddish_letter: string
+    yiddish_letter_name: string
+    latin_letter_name: string
+    sort: int
+    created_at: datetime
+    updated_at: datetime
+}
+
+entity Transcription {
+    id: int <<PK, AI>>
+    alphabet_id: int <<FK, PK>>
+    value: string
+    created_at: datetime
+    updated_at: datetime
+}
+
+entity Word {
+    id: int <<PK, AI>>
+    image: string
+    english_word: string
+    yiddish_word: string
+    indefinite_article: string
+    plural_form: string
+    yiddish_transcription: string
+    example_sentence: string
+    category_id: int
+    created_at: datetime
+    updated_at: datetime
+}
+
+MainCategory "1" -- "*" Category
+Alphabet "1" -- "*" Transcription
+Word "1" -- "1" Category
+
+@enduml

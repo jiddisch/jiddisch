@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity">
+
+    <ImageView
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/burger_menu"
+        android:padding="@dimen/menu_button_padding"
+        android:src="@drawable/burger_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/toolbarBreadcrumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/toolbar_breadcrumb_margin_end"
+        android:background="@drawable/rounded_white_background"
+        android:padding="@dimen/toolbar_breadcrumb_padding"
+        android:textColor="@color/color01"
+        android:textSize="@dimen/toolbar_breadcrumb_text_size"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/menuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menuButton"
+        tools:text="test"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/menuLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="111dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menuButton"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/closeMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/close_menu"
+            android:src="@drawable/combined_shape_2" />
+
+        <TextView
+            android:id="@+id/home_menu_text"
+            style="@style/MainMenuItem"
+            android:text="@string/HomeBtn" />
+
+        <TextView
+            android:id="@+id/learn_menu_text"
+            style="@style/MainMenuItem"
+            android:text="@string/learnPortalBtn" />
+
+        <TextView
+            android:id="@+id/practice_menu_text"
+            style="@style/MainMenuItem"
+            android:text="@string/practicePortalBtn" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dimmingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#33000000"
+        android:elevation="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainFragmentLayout"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuButton"
+        app:navGraph="@navigation/nav_graph" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

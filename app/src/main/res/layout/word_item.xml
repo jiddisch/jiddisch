@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color02">
+
+            <ImageView
+                android:id="@+id/word_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/word"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/english_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/josefin_sans_bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Apple" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/yiddish_transcription"
+        style="@style/YiddishWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arimo_bold"
+        android:textColor="@color/color01"
+        android:textSize="32sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/nested_constraint_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        tools:text="[epl]" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nested_constraint_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mask"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yiddish_transcription">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word_container"
+            style="@style/WordContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/indefinite_article"
+                style="@style/YiddishWord"
+                android:fontFamily="@font/arimo"
+                android:textColor="@color/color01"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/yiddish_word"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="די" />
+
+            <TextView
+                android:id="@+id/yiddish_word"
+                style="@style/YiddishWord"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/arimo_bold"
+                android:textColor="@color/color01"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/indefinite_article"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="עפל" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/sing_indicator"
+            style="@style/Indicator"
+            android:text="@string/sing_indicator"
+            app:layout_constraintBottom_toBottomOf="@+id/word_container"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/plural_word_container"
+            style="@style/WordContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/word_container">
+
+            <TextView
+                android:id="@+id/indefinite_article_plural"
+                style="@style/YiddishWord"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/arimo"
+                android:text="@string/plural_article_yiddish"
+                android:textColor="@color/color01"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/plural_form"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="די" />
+
+            <TextView
+                android:id="@+id/plural_form"
+                style="@style/YiddishWord"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/arimo_bold"
+                android:textColor="@color/color01"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/indefinite_article_plural"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="עפל" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/pl_indicator"
+            style="@style/Indicator"
+            android:text="@string/pl_indicator"
+            app:layout_constraintBottom_toBottomOf="@+id/plural_word_container"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/color02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/plural_word_container"
+            app:layout_constraintWidth_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/practice_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yiddish_transcription">
+
+        <TextView
+            android:id="@+id/option_1"
+            style="@style/OptionStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Option one" />
+
+        <TextView
+            android:id="@+id/option_2"
+            style="@style/OptionStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/option_1"
+            tools:text="Option two" />
+
+        <TextView
+            android:id="@+id/option_3"
+            style="@style/OptionStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/option_2"
+            tools:text="Option three" />
+
+        <TextView
+            android:id="@+id/option_4"
+            style="@style/OptionStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/option_3"
+            tools:text="Option four" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

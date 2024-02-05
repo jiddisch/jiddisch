@@ -1,0 +1,30 @@
+@startuml
+
+[*] --> Home
+Home --> LearningCenter
+Home --> PracticeCenter
+
+LearningCenter -[#blue]-> TopicList
+PracticeCenter -[#red]-> TopicList
+
+TopicList -[#blue]-> SubCategory
+TopicList : Expandable items with sub-lists
+TopicList -[#red]-> SubCategory
+
+SubCategory -[#blue]-> Lesson
+SubCategory -[#red]-> Quiz
+
+Lesson : About 8 slides of:
+Lesson : Image
+Lesson : Yiddish translations
+Lesson : English translations
+Lesson : Phrase in Yiddish
+Lesson -[#blue]-> Quiz
+
+Quiz : Image
+Quiz : 4 possible answers
+Quiz --> Done
+Quiz <-- Done
+Home <-- Done
+
+@enduml

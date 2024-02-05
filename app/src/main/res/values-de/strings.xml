@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Jiddisch</string>
+    <string name="menu">MENÜ</string>
+    <string name="learnPortalBtn">lernen</string>
+    <string name="practicePortalBtn">Trainieren</string>
+
+    <string name="close_menu">Menü schließen</string>
+    <string name="alef_menu_bg">Alef menu bg</string>
+    <string name="welcome">Willkommen</string>
+    <string name="word">Wort</string>
+    <string name="HomeBtn">Startseite</string>
+    <string name="learn_path">LERNPFAD</string>
+    <string name="home_path">WÄHLE, WIE DU LERNEN MÖCHTEST</string>
+    <string name="practice_path">ÜBUNGSPFAD</string>
+    <string name="alphabet_path">ALPHABETPFAD</string>
+    <string name="bullet_text">%d</string>
+    <string name="plural_article_yiddish">די</string>
+    <string name="sing_indicator">Sing.</string>
+    <string name="pl_indicator">Pl.</string>
+    <string name="yiddish_transcription">[%1$s]</string>
+    <string name="burger_menu">Burger Menu</string>
+    <string name="speaker_icon_description">Lautsprechersymbol zum Aussprechen des Wortes</string>
+</resources>

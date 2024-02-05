@@ -1,0 +1,29 @@
+@startuml
+
+start
+:Show home screen;
+
+:Menu button clicked;
+
+rectangle "Show menu and dimming view" {
+  :Show menu;
+  :Show dimming view;
+}
+
+:Close menu button clicked;
+rectangle "Close menu button clicked" {
+  :Hide menu;
+  :Hide dimming view;
+}
+
+:Menu button clicked;
+:Dimming view clicked;
+rectangle "Dimming view clicked" {
+  :Hide menu;
+  :Hide dimming view;
+}
+
+stop
+
+@enduml
+
